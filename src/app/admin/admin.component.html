@@ -1,0 +1,2 @@
+<app-login *ngIf="!authenticated()" (loginSuccess) = "onSuccessfulLogin()"></app-login>
+<app-quiz-maker *ngIf="authenticated()" (logout) = "onLogout()"></app-quiz-maker>

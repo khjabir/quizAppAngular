@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="form-inline">
+    <div class="col-md-12">
+      <input type="number" class="form-control col-md-9" placeholder="Employee Id" [(ngModel)]="employeeId">
+      <button class="btn btn-success col-md-3" (click)="onEmployeeIdSubmit()" [disabled]="!employeeIdEntered()">Start The Quiz
+        <i class="fa fa-arrow-circle-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-quiz></app-quiz>

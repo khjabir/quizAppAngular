@@ -1,0 +1,27 @@
+<!-- <div class="container">
+    <form class="form-signin">
+      <input type="text" placeholder="Username" class="form-control">
+      <input type="password" placeholder="Password" class="form-control">
+      <button class="btn btn-success">Login</button>
+    </form>
+</div>
+ -->
+
+<div class="content-bottom">
+  <h1>The Quiz Master</h1>
+    <form action="#" method="post">
+        <div class="field-group">
+            <div class="quiz-field">
+                <input name="text1" id="text1" type="text" value="" placeholder="username" [(ngModel)] = "userName" required>
+            </div>
+        </div>
+        <div class="quiz-field">
+            <div class="wthree-field">
+                <input name="password" id="password" type="Password" placeholder="password" [(ngModel)] = "password" required>
+            </div>
+        </div>
+        <div class="quiz-field">
+            <input id="saveForm" name="saveForm" type="submit" (click)="onLoginSubmit()" value="sign in" />
+        </div>
+    </form>
+</div>
