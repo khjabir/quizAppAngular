@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
@@ -9,6 +10,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { QuizMakerComponent } from './admin/quiz-maker/quiz-maker.component';
+import { QuestionComponent } from './quiz/question/question.component';
 
 
 @NgModule({
@@ -20,10 +22,12 @@ import { QuizMakerComponent } from './admin/quiz-maker/quiz-maker.component';
     AdminComponent,
     LoginComponent,
     QuizMakerComponent,
+    QuestionComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

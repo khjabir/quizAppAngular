@@ -1,11 +1,13 @@
 <div class="container">
-	<a *ngFor="let entry of quizQuestions">
-		<div class="col-xs-12">
-			<label for="question">{{entry.question}}</label>
-			<label for="optionA">{{entry.optionA}}</label>
-			<label for="optionB">{{entry.optionB}}</label>
-			<label for="optionC">{{entry.optionC}}</label>
-			<label for="optionD">{{entry.optionD}}</label>
-		</div>
+	<a class="container" *ngFor="let questionEl of quizQuestions">
+		<app-question [question]="questionEl" [questionNumber] = "(currentQuestionIndex + 1)"></app-question>
 	</a>
+</div>
+
+
+
+<div class="container text-center">
+	<button class="btn btn-primary" (click) = "showPrevQuestion()" [disabled] = "isFirstQuestion()">Previous Question</button>
+	<button class="btn btn-success" (click) = "showNextQuestion()" [disabled] = "isNextButtonDisable()">Next Question</button> {{isCorrectAnswer}}
+	<button class="btn btn-danger" (click) = "finishQuiz()" [disabled] = "isFinishButtonDisable()">Finish</button>
 </div>

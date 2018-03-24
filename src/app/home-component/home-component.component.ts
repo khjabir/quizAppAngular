@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponentComponent implements OnInit {
 
   employeeId = null;
+  employeeIdAccepted = false;
   constructor() {
   }
 
@@ -23,6 +24,12 @@ export class HomeComponentComponent implements OnInit {
 
   onEmployeeIdSubmit() {
     console.log('employee id is : ' + this.employeeId);
+    this.employeeIdAccepted = true;
+    this.employeeId = null;
+  }
+
+  quizFinished() {
+    this.employeeIdAccepted = false;
   }
 
 }
