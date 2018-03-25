@@ -13,6 +13,7 @@ export class QuizComponent implements OnInit {
     quizQuestions: Quiz[] = [];
     numberOfQuestions = 0;
     currentQuestionIndex = 0;
+    isCorrectAnswer = false;
     constructor() {
     }
 
@@ -27,6 +28,7 @@ export class QuizComponent implements OnInit {
             this.removeCurrentQuestion();
             this.currentQuestionIndex++;
             this.showQuestion();
+            this.isCorrectAnswer = false;
         }
     }
 
@@ -47,14 +49,14 @@ export class QuizComponent implements OnInit {
     }
 
     isNextButtonDisable() {
-        if (this.isLastQuestion()) {
+        if (this.isLastQuestion() || !this.isCorrectAnswer) {
             return  true;
         }
         return  false;
     }
 
     isFinishButtonDisable() {
-        if (!this.isLastQuestion()) {
+        if (!this.isLastQuestion() || !this.isCorrectAnswer) {
             return  true;
         }
         return false;
@@ -62,6 +64,10 @@ export class QuizComponent implements OnInit {
 
     isLastQuestion() {
         return (this.numberOfQuestions === this.currentQuestionIndex + 1);
+    }
+
+    setCorrectAnswer() {
+        this.isCorrectAnswer = true;
     }
 
     private getQuestionsFromServer() {

@@ -1,13 +1,13 @@
 <div class="container">
 	<a class="container" *ngFor="let questionEl of quizQuestions">
-		<app-question [question]="questionEl" [questionNumber] = "(currentQuestionIndex + 1)"></app-question>
+		<app-question [question]="questionEl" [questionNumber] = "(currentQuestionIndex + 1)" (correctAnswerSelected) = "setCorrectAnswer()"></app-question>
 	</a>
 </div>
 
 
 
 <div class="container text-center">
-	<button class="btn btn-primary" (click) = "showPrevQuestion()" [disabled] = "isFirstQuestion()">Previous Question</button>
-	<button class="btn btn-success" (click) = "showNextQuestion()" [disabled] = "isNextButtonDisable()">Next Question</button> {{isCorrectAnswer}}
-	<button class="btn btn-danger" (click) = "finishQuiz()" [disabled] = "isFinishButtonDisable()">Finish</button>
+	<!-- <button class="btn btn-primary" (click) = "showPrevQuestion()" [disabled] = "isFirstQuestion()">Previous Question</button> -->
+	<button class="btn btn-success" (click) = "showNextQuestion()" [disabled] = "isNextButtonDisable()" *ngIf = "!isLastQuestion()">Next Question</button>
+	<button class="btn btn-danger" (click) = "finishQuiz()" [disabled] = "isFinishButtonDisable()" *ngIf = "isLastQuestion()">Finish</button>
 </div>
