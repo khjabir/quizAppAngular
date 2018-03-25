@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { ToastOptions } from 'ng2-toastr';
+import { BarRatingModule } from 'ngx-bar-rating';
 
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
@@ -35,7 +36,8 @@ import { ResultComponent } from './quiz/result/result.component';
     BrowserAnimationsModule,
     FormsModule,
     NgbModule.forRoot(),
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    BarRatingModule
   ],
   providers: [{provide: ToastOptions, useClass: CustomToastOption}],
   bootstrap: [AppComponent]
