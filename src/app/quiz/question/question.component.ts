@@ -32,7 +32,7 @@ export class QuestionComponent implements OnInit {
   }
 
   showSuccess(msg: string) {
-    this.toastr.success(msg, 'Congratulations!');
+    this.toastr.success(msg, 'Congrats!');
   }
 
   showError(msg: string) {

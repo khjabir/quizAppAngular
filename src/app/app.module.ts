@@ -15,6 +15,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { QuizMakerComponent } from './admin/quiz-maker/quiz-maker.component';
 import { QuestionComponent } from './quiz/question/question.component';
+import { ResultComponent } from './quiz/result/result.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { QuestionComponent } from './quiz/question/question.component';
     LoginComponent,
     QuizMakerComponent,
     QuestionComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

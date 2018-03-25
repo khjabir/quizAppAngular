@@ -8,12 +8,15 @@ import { Quiz } from './quiz.model';
 })
 export class QuizComponent implements OnInit {
 
-    @Output() finishedQuiz: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() finishedQuiz: EventEmitter<number> = new EventEmitter<number>();
     questionsFromServer: Quiz[] = [];
     quizQuestions: Quiz[] = [];
     numberOfQuestions = 0;
     currentQuestionIndex = 0;
     isCorrectAnswer = false;
+    userOptionSelectCount = 0;
+    currentScore = null;
+    quizFineshed = false;
     constructor() {
     }
 
@@ -29,6 +32,7 @@ export class QuizComponent implements OnInit {
             this.currentQuestionIndex++;
             this.showQuestion();
             this.isCorrectAnswer = false;
+            this.getCurrentScore();
         }
     }
 
@@ -40,8 +44,14 @@ export class QuizComponent implements OnInit {
         }
     }
 
+    goToResultPage() {
+        this.getFinalScore();
+        this.quizFineshed = true;
+    }
+
     finishQuiz() {
-        this.finishedQuiz.emit(true);
+        console.log(this.currentScore);
+        this.finishedQuiz.emit(this.currentScore);
     }
 
     isFirstQuestion() {
@@ -62,6 +72,7 @@ export class QuizComponent implements OnInit {
 
     setOptionResult(isCorrect: boolean) {
         this.isCorrectAnswer = isCorrect;
+        this.userOptionSelectCount++;
     }
 
     private getQuestionsFromServer() {
@@ -87,4 +98,21 @@ export class QuizComponent implements OnInit {
         }
     }
 
+    private getCurrentScore() {
+        const currentScoreTemp = (this.currentQuestionIndex / this.userOptionSelectCount) * 5;
+        if (currentScoreTemp % 1 !== 0) {
+            this.currentScore = currentScoreTemp.toFixed(2);
+        } else {
+            this.currentScore = currentScoreTemp;
+        }
+    }
+
+    private getFinalScore() {
+        const currentScoreTemp = (this.numberOfQuestions / this.userOptionSelectCount) * 5;
+        if (currentScoreTemp % 1 !== 0) {
+            this.currentScore = currentScoreTemp.toFixed(2);
+        } else {
+            this.currentScore = currentScoreTemp;
+        }
+    }
 }

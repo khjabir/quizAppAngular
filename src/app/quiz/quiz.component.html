@@ -1,13 +1,17 @@
-<div class="container">
-	<a class="container" *ngFor="let questionEl of quizQuestions">
-		<app-question [question]="questionEl" [questionNumber] = "(currentQuestionIndex + 1)" (optionSelected) = "setOptionResult($event)"></app-question>
-	</a>
+<div *ngIf = "!quizFineshed">
+	<div class="container">
+		<a class="container" *ngFor="let questionEl of quizQuestions">
+			<app-question [question]="questionEl" [questionNumber] = "(currentQuestionIndex + 1)" (optionSelected) = "setOptionResult($event)"></app-question>
+		</a>
+	</div>
+	
+	
+	
+	<div class="container text-center">
+		<!-- <button class="btn btn-primary" (click) = "showPrevQuestion()" [disabled] = "isFirstQuestion()">Previous Question</button> -->
+		<button class="btn btn-success" (click) = "showNextQuestion()" [disabled] = "isNextButtonDisable()" *ngIf = "!isLastQuestion()">Next Question</button>
+		<button class="btn btn-danger" (click) = "goToResultPage()" [disabled] = "isFinishButtonDisable()" *ngIf = "isLastQuestion()">Finish</button>
+	</div>
 </div>
 
-
-
-<div class="container text-center">
-	<!-- <button class="btn btn-primary" (click) = "showPrevQuestion()" [disabled] = "isFirstQuestion()">Previous Question</button> -->
-	<button class="btn btn-success" (click) = "showNextQuestion()" [disabled] = "isNextButtonDisable()" *ngIf = "!isLastQuestion()">Next Question</button>
-	<button class="btn btn-danger" (click) = "finishQuiz()" [disabled] = "isFinishButtonDisable()" *ngIf = "isLastQuestion()">Finish</button>
-</div>
+<app-result *ngIf = "quizFineshed" [score] = "currentScore" (goHome) = "finishQuiz()"></app-result>
