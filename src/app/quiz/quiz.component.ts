@@ -49,25 +49,19 @@ export class QuizComponent implements OnInit {
     }
 
     isNextButtonDisable() {
-        if (this.isLastQuestion() || !this.isCorrectAnswer) {
-            return  true;
-        }
-        return  false;
+        return (this.isLastQuestion() || !this.isCorrectAnswer);
     }
 
     isFinishButtonDisable() {
-        if (!this.isLastQuestion() || !this.isCorrectAnswer) {
-            return  true;
-        }
-        return false;
+        return (!this.isLastQuestion() || !this.isCorrectAnswer);
     }
 
     isLastQuestion() {
         return (this.numberOfQuestions === this.currentQuestionIndex + 1);
     }
 
-    setCorrectAnswer() {
-        this.isCorrectAnswer = true;
+    setOptionResult(isCorrect: boolean) {
+        this.isCorrectAnswer = isCorrect;
     }
 
     private getQuestionsFromServer() {

@@ -1,6 +1,6 @@
 <div class="container">
 	<a class="container" *ngFor="let questionEl of quizQuestions">
-		<app-question [question]="questionEl" [questionNumber] = "(currentQuestionIndex + 1)" (correctAnswerSelected) = "setCorrectAnswer()"></app-question>
+		<app-question [question]="questionEl" [questionNumber] = "(currentQuestionIndex + 1)" (optionSelected) = "setOptionResult($event)"></app-question>
 	</a>
 </div>
 

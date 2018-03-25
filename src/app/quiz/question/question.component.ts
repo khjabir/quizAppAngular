@@ -11,7 +11,7 @@ export class QuestionComponent implements OnInit {
 
   @Input() question:  Quiz;
   @Input() questionNumber: number;
-  @Output() correctAnswerSelected: EventEmitter<void> = new EventEmitter<void>();
+  @Output() optionSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
   selectedOption = 0;
   defaultToastLife = {toastLife: 2000};
 
@@ -24,9 +24,10 @@ export class QuestionComponent implements OnInit {
 
   onOptionSelect(selectedOption: number) {
     if (selectedOption === this.question.answer) {
-      this.correctAnswerSelected.emit();
+      this.optionSelected.emit(true);
       this.showSuccess('Correct Answer!!');
     } else {
+      this.optionSelected.emit(false);
       this.showError('Wrong Answer!!');
     }
   }
