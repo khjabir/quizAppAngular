@@ -1,10 +1,10 @@
 export class Quiz {
     constructor(
         public question,
-        public optionA, 
+        public optionA,
         public optionB,
         public optionC,
-        public optionD, 
+        public optionD,
         public answer) {
          }
 }

@@ -13,7 +13,6 @@ export class QuestionComponent implements OnInit {
   @Input() questionNumber: number;
   @Output() optionSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
   selectedOption = 0;
-  defaultToastLife = {toastLife: 2000};
 
   constructor(public toastr: ToastsManager, vcr: ViewContainerRef) {
     this.toastr.setRootViewContainerRef(vcr);
@@ -33,11 +32,11 @@ export class QuestionComponent implements OnInit {
   }
 
   showSuccess(msg: string) {
-    this.toastr.success(msg, 'Congratulations!', this.defaultToastLife);
+    this.toastr.success(msg, 'Congratulations!');
   }
 
   showError(msg: string) {
-    this.toastr.error(msg, 'Oops!', this.defaultToastLife);
+    this.toastr.error(msg, 'Oops!');
   }
 
   // showWarning() {

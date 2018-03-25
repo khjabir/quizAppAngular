@@ -16,7 +16,7 @@ export class HomeComponentComponent implements OnInit {
   }
 
   employeeIdEntered() {
-    if (this.employeeId == null || this.employeeId == '') {
+    if (this.employeeId == null || this.employeeId === '') {
       return false;
     }
     return true;
