@@ -8,11 +8,11 @@ export class NotifyToastService {
   }
 
    showSuccess(title: string, msg: string) {
-    this.toastr.success(msg, title);
+    this.toastr.success(title, msg);
   }
 
-  showError(msg: string, title: string) {
-    this.toastr.error(msg, title);
+  showError(title: string, msg: string) {
+    this.toastr.error(title, msg);
   }
 
   showWarning() {

@@ -77,7 +77,6 @@ export class QuizComponent implements OnInit {
     }
 
     private getQuestionsFromServer() {
-        console.log(this.questionsService.questionsFromServer);
         this.questionsFromServer = this.questionsService.questionsFromServer;
     }
 
