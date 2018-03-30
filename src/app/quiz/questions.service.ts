@@ -2,7 +2,6 @@ import { Injectable, OnInit } from '@angular/core';
 import { Quiz } from './quiz.model';
 
 
-@Injectable()
 export class QuestionsService implements OnInit {
 
   questionsFromServer: Quiz[] = [];
