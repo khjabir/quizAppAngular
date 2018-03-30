@@ -385,10 +385,34 @@ form .field-group .quiz-field {
     -ms-transition: 0.5s all;
 }
 
+.quiz-field input[type="button"] {
+    background: rgb(177, 22, 2);
+    width: 100%;
+    border: none;
+    color: #fff;
+    padding: 12px 15px;
+    /* text-transform: uppercase; */
+    font-size: 16px;
+    font-weight: 600;
+    /* font-family: 'Mukta Mahee', sans-serif; */
+    cursor: pointer;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
 .quiz-field input[type="submit"]:hover {
     background: rgb(2, 138, 49);
     color: #fcfcfc;
-    /* letter-spacing: 2px; */
+    letter-spacing: 2px;
+}
+
+.quiz-field input[type="button"]:hover {
+    background: rgb(167, 21, 2);
+    color: #fcfcfc;
+    letter-spacing: 2px;
 }
 
 /* switch */

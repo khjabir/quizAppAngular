@@ -1,19 +1,9 @@
-<!-- <div class="container">
-    <form class="form-signin">
-      <input type="text" placeholder="Username" class="form-control">
-      <input type="password" placeholder="Password" class="form-control">
-      <button class="btn btn-success">Login</button>
-    </form>
-</div>
- -->
-
 <div class="content-bottom">
   <h1>The Quiz Master</h1>
     <form action="#" method="post">
         <div class="field-group">
             <div class="quiz-field">
-                <ng-template #tipContent>Hello!</ng-template>
-                <input name="text1" id="text1" type="text" value="" placeholder="username" [(ngModel)] = "userName" [ngbTooltip]="tipContent" required>
+                <input name="text1" id="text1" type="text" value="" placeholder="username" [(ngModel)] = "userName" required>
             </div>
         </div>
         <div class="quiz-field">
@@ -23,6 +13,10 @@
         </div>
         <div class="quiz-field">
             <input id="saveForm" name="saveForm" type="submit" (click)="onLoginSubmit()" value="sign in" />
+        </div>
+        <hr>
+        <div class="quiz-field">
+            <input type="button" routerLink="/" value="Sorry!! I'm Not The Admin">
         </div>
     </form>
 </div>

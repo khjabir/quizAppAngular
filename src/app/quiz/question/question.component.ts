@@ -28,10 +28,10 @@ export class QuestionComponent implements OnInit {
   onOptionSelect(selectedOption: number) {
     if (selectedOption === this.question.answer) {
       this.optionSelected.emit(true);
-      this.notifyToastService.showSuccess(this.successMsg, this.successTitle);
+      this.notifyToastService.showSuccess(this.successTitle, this.successMsg);
     } else {
       this.optionSelected.emit(false);
-      this.notifyToastService.showError(this.WrongMsg, this.WrongTitle);
+      this.notifyToastService.showError(this.WrongTitle, this.WrongMsg);
     }
   }
 

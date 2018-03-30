@@ -7,11 +7,11 @@ export class NotifyToastService {
   constructor(public toastr: ToastsManager) {
   }
 
-   showSuccess(title: string, msg: string) {
+   showSuccess(msg: string, title: string) {
     this.toastr.success(title, msg);
   }
 
-  showError(title: string, msg: string) {
+  showError(msg: string, title: string) {
     this.toastr.error(title, msg);
   }
 
