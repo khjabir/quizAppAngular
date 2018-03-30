@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Quiz } from './quiz.model';
+import { QuestionsService } from './questions.service';
 
 @Component({
     selector: 'app-quiz',
@@ -17,7 +18,7 @@ export class QuizComponent implements OnInit {
     userOptionSelectCount = 0;
     currentScore = null;
     quizFineshed = false;
-    constructor() {
+    constructor(private questionsService: QuestionsService) {
     }
 
     ngOnInit() {
@@ -76,12 +77,8 @@ export class QuizComponent implements OnInit {
     }
 
     private getQuestionsFromServer() {
-        const question1 = new Quiz('Which is the first letter of english?', 'A', 'B', 'C', 'D', 1);
-        const question2 = new Quiz('Which is the last letter of english?', 'W', 'X', 'Y', 'Z', 4);
-        const question3 = new Quiz('Which is the second letter of english?', 'C', 'D', 'A', 'B', 4);
-        this.questionsFromServer.push(question1);
-        this.questionsFromServer.push(question2);
-        this.questionsFromServer.push(question3);
+        console.log(this.questionsService.questionsFromServer);
+        this.questionsFromServer = this.questionsService.questionsFromServer;
     }
 
     private showFirstQuestion() {
