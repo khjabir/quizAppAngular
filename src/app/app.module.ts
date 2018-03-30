@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { ToastOptions } from 'ng2-toastr';
 import { BarRatingModule } from 'ngx-bar-rating';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
@@ -18,6 +19,10 @@ import { QuizMakerComponent } from './admin/quiz-maker/quiz-maker.component';
 import { QuestionComponent } from './quiz/question/question.component';
 import { ResultComponent } from './quiz/result/result.component';
 
+const appRoutes: Routes = [
+  { path: 'admin', component: AdminComponent},
+  { path: '', component: HomeComponentComponent}
+];
 
 @NgModule({
   declarations: [
@@ -37,7 +42,8 @@ import { ResultComponent } from './quiz/result/result.component';
     FormsModule,
     NgbModule.forRoot(),
     ToastModule.forRoot(),
-    BarRatingModule
+    BarRatingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [{provide: ToastOptions, useClass: CustomToastOption}],
   bootstrap: [AppComponent]

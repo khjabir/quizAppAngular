@@ -2,6 +2,5 @@
       <h1 class="text-center">Experion SEPG Quiz</h1>
       
       <hr>
-  <app-home-component *ngIf="!adminUser()"></app-home-component>
-  <app-admin *ngIf="adminUser()"></app-admin>
+  <router-outlet></router-outlet>
 </div>
