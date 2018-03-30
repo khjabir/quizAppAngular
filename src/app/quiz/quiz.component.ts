@@ -77,7 +77,8 @@ export class QuizComponent implements OnInit {
     }
 
     private getQuestionsFromServer() {
-        this.questionsFromServer = this.questionsService.questionsFromServer;
+        this.questionsService.setQuestionsFromServer();
+        this.questionsFromServer = this.questionsService.getQuestionsFromServer();
     }
 
     private showFirstQuestion() {
