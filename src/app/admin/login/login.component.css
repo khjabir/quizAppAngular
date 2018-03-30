@@ -410,7 +410,7 @@ form .field-group .quiz-field {
 }
 
 .quiz-field input[type="button"]:hover {
-    background: rgb(167, 21, 2);
+    background: rgb(211, 28, 4);
     color: #fcfcfc;
     letter-spacing: 2px;
 }

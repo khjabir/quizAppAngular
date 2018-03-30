@@ -22,5 +22,9 @@ export class QuestionsService {
     return this.questionsFromServer.slice();
   }
 
+  clearQuestionsFromServer() {
+    this.questionsFromServer = [];
+  }
+
 
 }

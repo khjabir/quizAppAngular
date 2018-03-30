@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance:textfield;
+}
+
+.middle {
+    position: absolute;
+    bottom: 50%;
+}
+
+.right-bottom {
+    position:absolute;
+    bottom:0;
+    right:10px;
+}

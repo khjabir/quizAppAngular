@@ -46,6 +46,7 @@ export class QuizComponent implements OnInit {
     }
 
     goToResultPage() {
+        this.questionsService.clearQuestionsFromServer();
         this.getFinalScore();
         this.quizFineshed = true;
     }

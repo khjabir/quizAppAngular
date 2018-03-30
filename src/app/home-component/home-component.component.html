@@ -1,4 +1,4 @@
-<div class="container text-center" *ngIf="!employeeIdAccepted">
+<div class="container text-center middle" *ngIf="!employeeIdAccepted">
   <div class="form-inline">
     <div class="col-md-12">
       <input type="number" class="form-control col-md-9" placeholder="Employee Id" [(ngModel)]="employeeId" appSelectText>
@@ -7,7 +7,8 @@
       </button>
     </div>
   </div>
-  <a routerLink="/admin">Admin User?</a>
 </div>
 
 <app-quiz *ngIf="employeeIdAccepted" (finishedQuiz)="quizFinished()"></app-quiz>
+
+<a *ngIf="!employeeIdAccepted" routerLink="/admin" class="right-bottom">Admin User?</a>
