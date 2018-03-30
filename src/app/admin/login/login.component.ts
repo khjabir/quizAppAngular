@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NotifyToastService } from '../../notifications/notify-toast.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   userName = null;
   password = null;
   @Output() loginSuccess: EventEmitter<boolean> = new EventEmitter<boolean>();
-  constructor(private notifyToastService: NotifyToastService) {
+  constructor(private notifyToastService: NotifyToastService, private router: Router) {
 
    }
 
@@ -25,6 +26,10 @@ export class LoginComponent implements OnInit {
     } else {
       this.notifyToastService.showError('Error!!', 'Unauthorized Access');
     }
+  }
+
+  exitFromAdminScreen() {
+    this.router.navigate(['/']);
   }
 
 }
