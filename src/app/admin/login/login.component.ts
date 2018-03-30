@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginSubmit() {
-    if(this.userName === 'jabir' && this.password === 'jabir') {
+    if (this.userName === 'jabir' && this.password === 'jabir') {
       console.log('Login Success!!!!!!');
       this.loginSuccess.emit(true);
     } else {

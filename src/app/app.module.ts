@@ -10,7 +10,7 @@ import { BarRatingModule } from 'ngx-bar-rating';
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { SelectTextDirective } from './directives/select-text.directive';
-import { CustomToastOption } from './custom-toast-option';
+import { CustomToastOption } from './notifications/custom-toast-option';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
