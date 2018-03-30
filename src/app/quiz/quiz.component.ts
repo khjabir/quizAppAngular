@@ -32,7 +32,7 @@ export class QuizComponent implements OnInit {
             this.currentQuestionIndex++;
             this.showQuestion();
             this.isCorrectAnswer = false;
-            this.getCurrentScore();
+            this.currentScore = this.getCurrentScore();
         }
     }
 
@@ -101,9 +101,9 @@ export class QuizComponent implements OnInit {
     private getCurrentScore() {
         const currentScoreTemp = (this.currentQuestionIndex / this.userOptionSelectCount) * 5;
         if (currentScoreTemp % 1 !== 0) {
-            this.currentScore = currentScoreTemp.toFixed(2);
+            return currentScoreTemp.toFixed(2);
         } else {
-            this.currentScore = currentScoreTemp;
+            return currentScoreTemp;
         }
     }
 
