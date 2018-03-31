@@ -18,12 +18,7 @@ import { LoginComponent } from './admin/login/login.component';
 import { QuizMakerComponent } from './admin/quiz-maker/quiz-maker.component';
 import { QuestionComponent } from './quiz/question/question.component';
 import { ResultComponent } from './quiz/result/result.component';
-
-const appRoutes: Routes = [
-  { path: 'admin', component: AdminComponent},
-  { path: '', component: HomeComponentComponent},
-  { path: '**', redirectTo: ''}
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +39,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     ToastModule.forRoot(),
     BarRatingModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [{provide: ToastOptions, useClass: CustomToastOption}],
   bootstrap: [AppComponent]
