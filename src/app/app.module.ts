@@ -21,7 +21,8 @@ import { ResultComponent } from './quiz/result/result.component';
 
 const appRoutes: Routes = [
   { path: 'admin', component: AdminComponent},
-  { path: '', component: HomeComponentComponent}
+  { path: '', component: HomeComponentComponent},
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({
